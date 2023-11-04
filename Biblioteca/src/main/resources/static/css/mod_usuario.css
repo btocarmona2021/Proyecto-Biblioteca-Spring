@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedor form{
+    margin: 0 20px;
+    width: 320px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: darkmagenta;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 260px;
+    background-color: darkslategray;
+    border-radius: 6px;
+    padding: 15px;
+    color: #eeeeee;
+    padding: 10px;
+}
+.user h5 {
+    width: 90%;
+    background-color: darkmagenta;
+    margin: 10px 0 ;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px ;
+    text-align: center;
+
+}
+.perfil{
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 2px black;
+}
+.btn{
+    padding: 15px;
+    background-color: darkmagenta;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+.btn:hover{
+    background-color: transparent;
+    color: #eeeeee;
+    border-color: #eeeeee;
+}

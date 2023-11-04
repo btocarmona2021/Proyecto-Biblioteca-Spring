@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/head::head">
+    </head>
+    <title>Formulario de Autor</title>
+    <link rel="stylesheet" href="/css/autor.css"/>
+<body>
+<div class="contenedor">
+    <header>
+        <div class="cont__imagen">
+            <img src="/img/centenario.png" alt=""/>
+        </div>
+        <div class="cont_menu">
+            <nav th:replace="/fragments/navbar ::nav"></nav>
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="titulo">
+        <h3>Cargá el Autor del libro</h3>
+    </div>
+    <form action="/autor/registro" method="POST">
+        <div class="form-group">
+            <input
+                    type="text"
+                    class="form-group input"
+                    name="nombre"
+                    placeholder="Nombre del autor"
+            />
+            <div th:if="${error !=null}">
+                <h4>Error</h4>
+                <p th:text="${error}"></p>
+            </div>
+        </div>
+        <input type="submit" value="Enviar" class="btn"/>
+    </form>
+</div>
+
+</body>
+</html>

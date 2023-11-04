@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+body {
+    margin: 0;
+    padding: 0;
+    background: url(/img/libros.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins";
+}
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: rgba(102, 51, 153, 0.492);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.cont__imagen {
+    width: 150px;
+    height: 100px;
+}
+.cont__imagen img {
+    width: 100%;
+    height: 100%;
+}
+.cont_menu {
+    width: 60%;
+}
+.menu {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    justify-content: space-around;
+}
+.menu li {
+    background-color: darkmagenta;
+    padding: 5px 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 2px rgba(253, 253, 253, 0.5);
+    list-style: none;
+    margin: 5px;
+}
+.menu li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 5px;
+}
+.menu li i {
+    color: white;
+}
+h3 {
+    width: 600px;
+    height: 30px;
+    padding: 15px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+    background:url(/img/banner.jpg);
+    background-size: cover;
+    background-position: bottom;
+    text-align: center;
+    border-radius: 8px;
+    color: rgb(16, 27, 131);
+}
+.test{
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+.bienvenida {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.exitoso {
+    width: 250px;
+    height: 110px;
+    padding: 8px;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 2px;
+    text-align: center;
+}
+.contenedor_libro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contenedor_libro table {
+    border: none;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #000000;
+}
+.contenedor_libro table tr th {
+    background-color: rgb(59, 1, 59);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+.contenedor_libro table tbody {
+    background-color: rgb(61, 60, 60);
+}
+.contenedor_libro table tbody td {
+    color: wheat;
+    font-weight: 200;
+}
+.contenedor_libro table tbody td:nth-child(3) {
+    text-align: center;
+}
+.contenedor_libro table tbody td a:hover{
+    color: greenyellow;
+}
+.contenedor_libro table tbody td i{
+    margin: 0 10px;
+}
+.contenedor_libro table tbody td a{
+    text-decoration: none;
+    color: white;
+    margin: 0 5px;
+}

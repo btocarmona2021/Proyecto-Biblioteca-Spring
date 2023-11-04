@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head::head">
+</head>
+<title>Login</title>
+<link rel="stylesheet" href="/css/login.css">
+<body>
+<div class="contenedor">
+
+    <div class="error" th:if="${error != null}"><h3 th:text="${error}"></h3></div>
+    <div th:if="${salida != null}" class="salida">
+        <h5>Genial</h5>
+        <p th:text="${hola}"></p>
+    </div>
+    <form th:action="@{/logincheck}" method="post" class="formulario">
+        <input type="text" name="correo" th:value="${correo}">
+        <input type="password" name="password">
+        <input type="submit" class="btn" value="Ingresar">
+
+    </form>
+
+</div>
+</body>
+</html>

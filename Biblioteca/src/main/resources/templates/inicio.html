@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+      <head th:replace="/fragments/head::head">
+      </head>
+      <title>Inicio</title>
+      <link rel="stylesheet" href="/css/index.css" />
+      <body>
+            <div class="contenedor">
+                <header>
+                    <div class="cont__imagen">
+                        <img src="/img/centenario.png" alt="" />
+                    </div>
+                    <div class="cont_menu">
+                        <nav th:replace="/fragments/navbar:: nav"></nav>
+                    </div>
+                    <div th:if="${exito != null}" class="exitoso">
+                        <h5>Genial</h5>
+                        <p th:text="${exito}"></p>
+                    </div>
+                </header>
+
+                <div class="bienvenida">
+                    <h3>Bienvenidos a la Biblioteca Centenario</h3>
+                </div>
+                <div class="imagen">
+                    <img src="/img/libros.jpg" alt="Libros"/>
+                    <h3 th:if="session.usuariosession != null" th:text="Hola +' '+ ${session.usuariosession.nombre} +' '+',que gusto volver a verte!'"></h3>
+                    <img th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" class="perfil">
+                    <a th:href="@{/perfil}" class="btn">Editar Perfil</a>
+                </div>
+            </div>
+
+        </body>
+    </html>
+

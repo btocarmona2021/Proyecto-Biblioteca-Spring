@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head::head">
+</head>
+<title>Carga de Editoriales</title>
+<link rel="stylesheet" href="/css/libro.css"/>
+<body>
+<div class="contenedor">
+    <header>
+        <div class="cont__imagen">
+            <img src="/img/centenario.png" alt=""/>
+        </div>
+        <div class="cont_menu">
+            <nav th:replace="/fragments/navbar ::nav"></nav>
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="titulo">
+        <h3>Carga de Libro</h3>
+    </div>
+    <form action="/libros/registro" class="form-group" method="POST">
+        <div>
+
+            <input
+                    id="isbn"
+                    type="number"
+                    class="entrada"
+                    name="isbn"
+                    placeholder="Ingres el ISBN"
+            />
+        </div>
+
+        <div>
+
+            <input
+                    type="text"
+                    id="entrada"
+                    name="titulo"
+                    placeholder="Ingresa el titulo del libro"
+            />
+        </div>
+
+        <div>
+            <label for="ejemplares">Cantidad de ejemplares</label>
+            <input
+                    type="number"
+                    id="ejemplares"
+                    class="numeros"
+                    name="ejemplares"
+                    value="0"
+            />
+        </div>
+
+        <div>
+            <select name="idautor" class="form-control">
+                <option>Seleccione Autor</option>
+                <option
+                        th:each="autor : ${autores}"
+                        th:value="${autor.id}"
+                        th:text="${autor.nombre}"
+                ></option>
+            </select>
+        </div>
+        <div>
+            <select name="ideditorial" class="form-control">
+                <option>Seleccione Editorial</option>
+                <option
+                        th:each="editorial : ${editoriales}"
+                        th:value="${editorial.id}"
+                        th:text="${editorial.nombre}"
+                >
+                    Seleccione Editorial
+                </option>
+            </select>
+        </div>
+
+        <div th:if="${error != null}" class="card">
+            <div class="card-body">
+                <p>Error</p>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+        <div th:if="${exito != null}" class="card">
+            <div class="card-body">
+                <p>Error</p>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <input type="submit" value="Enviar" class="btn"/>
+    </form>
+</div>
+</body>
+</html>

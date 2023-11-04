@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head::head">
+</head>
+<title>Modificar Editorial</title>
+<link rel="stylesheet" href="/css/editorial.css"/>
+<body>
+<div class="contenedor">
+    <header>
+        <div class="cont__imagen">
+            <img src="/img/centenario.png" alt=""/>
+        </div>
+        <div class="cont_menu">
+            <nav th:replace="/fragments/navbar :: nav"></nav>
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="titulo">
+        <h3>Modificar editorial</h3>
+    </div>
+    <form th:action="@{/editorial/modificar/__${editorial.id}__}" method="POST">
+        <input type="hidden" th:value="${id}" name="id">
+
+        <div class="form-group">
+            <input th:value="${editorial.nombre}" type="text" name="nombre" class="form-group input">
+        </div>
+        <button type="submit" class="btn">Actualizar</button>
+        <button type="button" class="btn"><a href="/editorial/lista">Cancelar</a></button>
+    </form>
+</div>
+</body>
+</html>

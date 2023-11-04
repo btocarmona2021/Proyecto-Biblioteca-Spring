@@ -1,0 +1,44 @@
+<nav>
+    <ul class="menu">
+        <li>
+            <i class="fa-solid fa-house-chimney"></i
+            ><a href="/inicio">Inicio</a>
+        </li>
+        <li sec:authorize="hasRole('ADMIN')">
+            <i class="fa-solid fa-pencil"></i
+            ><a href="/autor/registrar">Cargar Autor</a>
+        </li>
+        <li sec:authorize="hasRole('ADMIN')">
+            <i class="fa-solid fa-feather"></i
+            ><a href="/editorial/registrar">Cargar editorial</a>
+        </li>
+        <li sec:authorize="hasRole('ADMIN')">
+            <i class="fa-solid fa-book"></i
+            ><a href="/libros/registrar">Cargar Libro</a>
+        </li>
+        <li th:if="${session.usuariosession != null}">
+            <i class="fa-regular fa-rectangle-list"></i
+            ><a href="/autor/lista">Lista Autores</a>
+        </li>
+        <li th:if="${session.usuariosession != null}">
+            <i class="fa-regular fa-rectangle-list"></i
+            ><a href="/editorial/lista">Lista Editoriales</a>
+        </li>
+        <li th:if="${session.usuariosession != null}">
+            <i class="fa-regular fa-rectangle-list"></i
+            ><a href="/libros/lista">Lista Libros</a>
+        </li>
+        <li th:if="${session.usuariosession != null}">
+            <i class="fa-regular fa-rectangle-list"></i
+            ><a href="/logout">Cerrar Sesión</a>
+        </li>
+        <li th:if="${session.usuariosession == null}">
+            <i class="fa-solid fa-house-chimney"></i
+            ><a href="/login">Login</a>
+        </li>
+        <li th:if="${session.usuariosession == null}">
+            <i class="fa-solid fa-house-chimney"></i
+            ><a href="/registrar">Registrate!</a>
+        </li>
+    </ul>
+</nav>

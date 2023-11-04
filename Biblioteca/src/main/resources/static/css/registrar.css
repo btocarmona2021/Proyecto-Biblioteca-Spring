@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:url("/img/banner.jpg");
+
+}
+.contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.formulario{
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 15px 15px;
+    background: url("/img/form.png");
+    background-size: cover;
+    background-position: top;
+    border-radius: 8px;
+    width: 360px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 3px 2px white;
+}
+.formulario >*{
+    margin: 10px 0;
+}
+.formulario input[type="text"],input[type="password"]{
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    background-color: beige;
+    border-radius: 6px;
+}
+.formulario i {
+    color: #000000;
+    filter: drop-shadow( 1px 1px 1px white);
+}
+
+.btn{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: beige;
+    border: 2px solid black;
+}
+.btn:hover{
+    color: beige;
+    border-color: beige;
+    background-color: black;
+}
+
+.error{
+
+    background-color: rgba(139, 0, 0, 0.65);
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 2px darkred;
+}

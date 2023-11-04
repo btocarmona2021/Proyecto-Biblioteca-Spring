@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head::head">
+</head>
+<title>TODO supply a title</title>
+<link rel="stylesheet" href="/css/autor.css"/>
+<body>
+<div class="contenedor">
+    <header>
+        <div class="cont__imagen">
+            <img src="/img/centenario.png" alt=""/>
+        </div>
+        <div class="cont_menu">
+            <nav th:replace="/fragments/navbar:: nav"></nav>
+        </div>
+    </header>
+</div>
+<div class="container">
+    <div class="titulo">
+        <h3>Modificar Autor</h3>
+    </div>
+    <form th:action="@{/autor/modificar/__${autor.id}__}" method="POST">
+
+        <input type="hidden" th:value="${id}" name="id">
+
+        <div class="form-group">
+            <input th:value="${autor.nombre}" type="text" name="nombre" class="form-group input">
+        </div>
+        <button type="submit" class="btn">Actualizar</button>
+        <button type="button" class="btn"><a href="/autor/lista">Cancelar</a></button>
+    </form>
+</div>
+</body>
+</html>

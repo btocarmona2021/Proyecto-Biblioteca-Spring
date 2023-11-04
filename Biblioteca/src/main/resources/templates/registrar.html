@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head::head"></head>
+<title>Registrate!</title>
+<link rel="stylesheet" href="/css/registrar.css">
+<body>
+<div class="contenedor">
+    <div class="error" th:if="${error != null}"><h3 th:text="${error}"></h3></div>
+    <form th:action="@{/registro}" method="POST" class="formulario"  enctype="multipart/form-data">
+        <h4>REGISTRATE!</h4>
+        <div><i class="fa-solid fa-user-plus"></i> <input type="text" name="nombre" th:value="${nombre}"></div>
+        <div><i class="fa-solid fa-envelope"></i> <input type="text" name="correo" th:value="${correo}"></div>
+        <div><i class="fa-regular fa-image"></i> <input type="file" name="archivo" ></div>
+        <div><i class="fa-solid fa-key"></i> <input type="password" name="password"></div>
+        <div><i class="fa-solid fa-unlock-keyhole"></i> <input type="password" name="verificacion"></div>
+        <input type="submit" value="Registrarme" class="btn">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/mod_usuario.css">
+</head>
+<body>
+
+<div class="contenedor">
+    <div>
+        <div class="user">
+            <img th:src="@{/imagen/perfil/__${session.usuariosession.getId()}__}" alt="Foto Pefil" class="perfil">
+            <h5 th:text="Nombre +' '+ ${session.usuariosession.getNombre()}"></h5>
+            <h5 th:text="Correo +' '+ ${session.usuariosession.getCorreo()}"></h5>
+            <h5 th:text="Rol +' '+${session.usuariosession.getRol()}"></h5>
+
+        </div>
+    </div>
+    <div class="modifica">
+        <form th:action="@{/perfil/__${session.usuariosession.getId()}__}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:value="${session.usuariosession.getId()}" name="id">
+            <input type="text" th:value="${session.usuariosession.getNombre()}" name="nombre">
+            <input type="text" th:value="${session.usuariosession.getCorreo()}" name="correo">
+            <input type="file" name="archivo">
+            <input type="submit" value="MODIFICAR" class="btn">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
